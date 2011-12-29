@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 This collection contains files to add wallpapers (background
@@ -26,20 +24,12 @@ images) to LaTeX documents. It uses the eso-pic package, but
 provides simple commands to include effects such as tiling. An
 example is provided, which works under both LaTeX and pdfLaTeX.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -51,7 +41,6 @@ example is provided, which works under both LaTeX and pdfLaTeX.
 %doc %{_texmfdistdir}/doc/latex/wallpaper/example/example.tex
 %doc %{_texmfdistdir}/doc/latex/wallpaper/example/hya.png
 %doc %{_texmfdistdir}/doc/latex/wallpaper/wallpapermanual.pdf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -62,5 +51,3 @@ example is provided, which works under both LaTeX and pdfLaTeX.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
