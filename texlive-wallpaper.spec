@@ -6,7 +6,7 @@
 # catalog-version 1.10
 Name:		texlive-wallpaper
 Version:	1.10
-Release:	8
+Release:	9
 Summary:	Easy addition of wallpapers (background images) to LaTeX documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/wallpaper
