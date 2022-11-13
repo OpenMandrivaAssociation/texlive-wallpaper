@@ -1,18 +1,12 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/latex/contrib/wallpaper
-# catalog-date 2007-01-20 20:21:37 +0100
-# catalog-license lppl
-# catalog-version 1.10
 Name:		texlive-wallpaper
-Version:	1.10
-Release:	12
+Version:	15878
+Release:	1
 Summary:	Easy addition of wallpapers (background images) to LaTeX documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/wallpaper
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wallpaper.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wallpaper.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wallpaper.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wallpaper.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ provides simple commands to include effects such as tiling. An
 example is provided, which works under both LaTeX and pdfLaTeX.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -44,7 +38,7 @@ example is provided, which works under both LaTeX and pdfLaTeX.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
