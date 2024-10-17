@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Easy addition of wallpapers (background images) to LaTeX documents
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/wallpaper
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/wallpaper
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wallpaper.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wallpaper.doc.r%{version}.tar.xz
